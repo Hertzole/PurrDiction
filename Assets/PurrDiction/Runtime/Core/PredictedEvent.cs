@@ -2,14 +2,14 @@ using System;
 
 namespace PurrNet.Prediction
 {
-    public class PredictedDelegate<TDelegate> where TDelegate : Delegate
+    public abstract class PredictedDelegate<TDelegate> where TDelegate : Delegate
     {
         private readonly PredictionManager _world;
         private readonly PredictedIdentity _identity;
 
         protected TDelegate onInvoke;
 
-        public PredictedDelegate(PredictionManager world, PredictedIdentity identity)
+        protected PredictedDelegate(PredictionManager world, PredictedIdentity identity)
         {
             _world = world;
             _identity = identity;
